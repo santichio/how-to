@@ -7,23 +7,24 @@ In this tutorial, I gonna make a step by step to setup a repositorie of a Node.J
 ## INDICE
 
 - [HOW TO CREATE AN REST API WITH ORM SEQUELIZE](#how-to-create-an-rest-api-with-orm-sequelize)
-  - [INDICE](#indice)
-  - [ABOUT THE PROJECT](#about-the-project)
-  - [PREREQUISITES](#prerequisites)
-  - [LIBRARIES AND FRAMEWORKS](#libraries-and-frameworks)
-  - [INITIALIZE  THE PROJECT](#initialize--the-project)
-  - [CONFIGURE DEV FILES](#configure-dev-files)
-  - [SET UP DIRECTORIES](#set-up-directories)
-  - [CONFIGURE EXPRESS](#configure-express)
-  - [CONFIGURE SEQUELIZE](#configure-sequelize)
-  - [CREATE A MODEL](#create-a-model)
-  - [SETUP THE BASE SERVICES AND CONTROLLERS](#setup-the-base-services-and-controllers)
-  - [CREATE A NEW SERVICE](#create-a-new-service)
-  - [CREATE A NEW CONTROLLER](#create-a-new-controller)
-  - [CREATE A NEW ROUTE](#create-a-new-route)
-  - [TEST AND VALIDATE](#test-and-validate)
-  - [CONCLUSION](#conclusion)
-  - [COMPLEMENTARY READ](#complementary-read)
+	- [INDICE](#indice)
+	- [ABOUT THE PROJECT](#about-the-project)
+	- [PREREQUISITES](#prerequisites)
+	- [LIBRARIES AND FRAMEWORKS](#libraries-and-frameworks)
+	- [INITIALIZE  THE PROJECT](#initialize--the-project)
+	- [CONFIGURE DEV FILES](#configure-dev-files)
+	- [SET UP DIRECTORIES](#set-up-directories)
+	- [CONFIGURE EXPRESS](#configure-express)
+	- [CONFIGURE SEQUELIZE](#configure-sequelize)
+	- [CREATE A MODEL](#create-a-model)
+	- [SETUP THE BASE SERVICES AND CONTROLLERS](#setup-the-base-services-and-controllers)
+	- [CREATE A NEW SERVICE](#create-a-new-service)
+	- [CREATE A NEW CONTROLLER](#create-a-new-controller)
+	- [CREATE A NEW ROUTE](#create-a-new-route)
+	- [TEST AND VALIDATE](#test-and-validate)
+	- [CONCLUSION](#conclusion)
+	- [COMPLEMENTARY READ](#complementary-read)
+	- [NEXT STEPS](#next-steps)
 
 ## ABOUT THE PROJECT
 
@@ -80,7 +81,7 @@ And for dev packages, we gonna use the following:
 1. First of all, its required to initialize a Node.JS application, for it, open an terminal in the root of the project, and run:
 
 ```
-npm run init
+npm init
 ```
 
 2. Follow the steps to configure your project, as set the name, the version, author and etc...
@@ -164,7 +165,7 @@ project-name/
 |
 ├-- src/
 |   ├-- controllers/
-|   |   └-- Controler.js
+|   |   └-- Controller.js
 |   |
 |   ├-- routes/
 |   |   ├-- index.js
@@ -320,7 +321,7 @@ tableName: 'users'
 
 5. Now we gonna make the migration, the step to tell Sequelize to update our Data Base, copy our migration file name in `./src/migrations`, and enter the command:
 ```
-npx sequelize-cli migration:generate --name xxx-migration-example
+npx sequelize-cli db:migrate
 ```
 
 > [!NOTE]
@@ -331,9 +332,6 @@ npx sequelize-cli migration:generate --name xxx-migration-example
 
 > [!IMPORTANT]
 > If your models have associations, create first the models that don't have associations, then create the models with associations!
-
-> [!WARNING]
-> The comand `npx sequelize-cli migration:generate` without the `--name` paramter, runs all migration in the folder, and overwrite the migrated models.
 
 ## SETUP THE BASE SERVICES AND CONTROLLERS
 
@@ -540,6 +538,8 @@ module.exports = router
 > [!NOTE]
 > In this code, we import the Router function from Express, and import the UserController. Than we create a new instance of UserControle, and now we can user their methods. To create a new request route, use the methods of Router (GET, POST, PUT, DELETE), and pass the URL route in first parameter, and a callback function that return the controller method. Here I provide the routes for a basic CRUD.
 
+3. Update the file `./src/routes/index.js` importing the new route, and include in the `app.use()`.
+
 ## TEST AND VALIDATE
 
 Now we finish the basic for our API create, update, delete, and list the users from a Data Base. Now its time to see if everything works property!
@@ -591,3 +591,10 @@ Congratulations, now you have basic REST API using Express and ORM Sequelize, no
 - [Associations](https://sequelize.org/docs/v7/category/associations/);
 - [Migration](https://sequelize.org/docs/v7/models/migrations/);
 - [Querying](https://sequelize.org/docs/v7/category/querying/).
+
+## NEXT STEPS
+
+- Security of the API and Authentication
+- Error handle middlewares
+- Documentation
+- 
