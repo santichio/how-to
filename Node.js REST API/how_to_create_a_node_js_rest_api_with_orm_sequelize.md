@@ -1,4 +1,4 @@
-# HOW TO CREATE AN REST API WITH ORM SEQUELIZE
+# HOW TO CREATE A NODE.JS REST API WITH ORM SEQUELIZE
 
 ![Static Badge](https://img.shields.io/badge/VERSION-v1.0.0-blue) ![Static Badge](https://img.shields.io/badge/LAST%20RELEASE-11%2F03%2F2024-purple) ![Static Badge](https://img.shields.io/badge/AUTHOR-santichio-gren)
 
@@ -6,7 +6,7 @@ In this tutorial, I gonna make a step by step to setup a repositorie of a Node.J
 
 ## INDICE
 
-- [HOW TO CREATE AN REST API WITH ORM SEQUELIZE](#how-to-create-an-rest-api-with-orm-sequelize)
+- [HOW TO CREATE A NODE.JS REST API WITH ORM SEQUELIZE](#how-to-create-a-nodejs-rest-api-with-orm-sequelize)
 	- [INDICE](#indice)
 	- [ABOUT THE PROJECT](#about-the-project)
 	- [PREREQUISITES](#prerequisites)
